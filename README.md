@@ -19,10 +19,10 @@
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
 [![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
+<!-- [![Forks][forks-shield]][forks-url] -->
+<!-- [![Stargazers][stars-shield]][stars-url] -->
 [![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
+<!-- [![MIT License][license-shield]][license-url] -->
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
 
@@ -31,7 +31,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/Bruhimius/disparse">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <!-- <img src="images/logo.png" alt="Logo" width="80" height="80"> -->
   </a>
 
 <h3 align="center">Disparse</h3>
@@ -42,7 +42,7 @@
     <a href="https://github.com/Bruhimius/disparse"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/Bruhimius/disparse">View Demo</a>
+    <!-- <a href="https://github.com/Bruhimius/disparse">View Demo</a> -->
     ·
     <a href="https://github.com/Bruhimius/disparse/issues">Report Bug</a>
     ·
@@ -83,7 +83,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+<!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
 
 Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `Bruhimius`, `disparse`, `aayushnotayush`, `aayush101`, `gmail`, `shadyaayush`, `Disparse`, `Web Crawler for Displate Posters`
 
@@ -108,11 +108,6 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 
 <!-- GETTING STARTED -->
 ## Getting Started
-+Install requirements using
-```pip install -r requirements.txt```
-run protogui.py in cmd
-```streamlit run protogui.py```
-
 ### Prerequisites
 
 Python
@@ -139,8 +134,6 @@ run protogui.py in cmd/terminal
 ```
 streamlit run protogui.py
 ```
-
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
 
 _For more examples, please refer to the [Documentation](https://example.com)_
 
