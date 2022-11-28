@@ -5,5 +5,5 @@
 To-Do List:
 Scrape yandex to show first 5 results
 Upscale original image if no desirable results as per user
-Build GUI
+Build GUI (using Streamlit maybe)
 
