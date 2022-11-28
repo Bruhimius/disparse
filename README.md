@@ -132,7 +132,7 @@ Python
 
 run protogui.py in cmd/terminal
 ```
-streamlit run protogui.py
+streamlit run .\protogui.py
 ```
 
 <!-- _For more examples, please refer to the [Documentation](https://example.com)_ -->
