@@ -114,14 +114,14 @@ Python
 
 ### Installation
 
-1. Install requirements
-    ```
-    pip install -r requirements.txt
-    ```
-2. Clone the repo
+1. Clone the repo
    ```sh
    git clone https://github.com/Bruhimius/disparse.git
    ```
+2. Install requirements
+    ```
+    pip install -r requirements.txt
+    ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
