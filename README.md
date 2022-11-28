@@ -85,7 +85,7 @@
 
 <!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
 
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `Bruhimius`, `disparse`, `aayushnotayush`, `aayush101`, `gmail`, `shadyaayush`, `Disparse`, `Web Crawler for Displate Posters`
+This project intends to reverse search Displate posters using Yandex Images Search and find suitable high-res images. Alternatively if not identical/similar images are found it can upscale the image parsed from displate.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
