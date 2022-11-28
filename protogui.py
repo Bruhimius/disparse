@@ -65,7 +65,7 @@ img_url = script_string[:script_string.find('"')]
 
 st.write("IMG URL:")
 # st.write("img_url")
-st.image(img_url)
+st.image(img_url,use_column_width=.25)
 st.download_button(
     label="Download this image",
     data=img_url,
