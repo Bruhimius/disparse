@@ -27,7 +27,7 @@ if link:
     # with st.spinner("Getting page"):
     #     time.sleep(5)
     st.success('Done!')
-    wall=st.image(img_url, width=200)
+    wall=st.image(img_url, width=250)
     my_bar.progress(100)
     if page.status_code != 200:
         st.error('Connection error', icon="🚨")
