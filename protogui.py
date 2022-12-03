@@ -4,7 +4,51 @@ import requests
 import os
 import json
 import urllib.request
-def yandex():
+import time
+# from streamlit_extras.switch_page_button import switch_page
+
+st.title("Welcome to Disparse")
+st.subheader("A Web Crawler for Posters found on displate.com")
+link = st.text_input(label="Enter the Displate URL",placeholder="https://displate.com/displate/2897177")
+my_bar = st.progress(0)
+if link:
+    my_bar.progress(20)
+    page = requests.get(link)
+    soup = BeautifulSoup(page.text, "html.parser")
+    scripts = soup.findAll("script", type="application/ld+json")
+    script = scripts[1]
+    script_string = str(script)
+    st.info("Extracting link to image")
+    my_bar.progress(50)
+    img_url_start_index = script_string.find("image") + 9
+    script_string = script_string[img_url_start_index:]
+    img_url = script_string[:script_string.find('"')]
+    st.info("Getting page")
+    # with st.spinner("Getting page"):
+    #     time.sleep(5)
+    st.success('Done!')
+    wall=st.image(img_url, width=200)
+    my_bar.progress(100)
+    if page.status_code != 200:
+        st.error('Connection error', icon="🚨")
+        quit()
+
+with st.container():
+        
+    st.download_button(
+        label="Download this image",
+        data=img_url,
+        file_name=f"{img_url}.jpg"
+    )
+
+
+    reverse = st.button(
+        label="Reverse search this Image"
+    )
+
+if reverse:
+    # with st.spinner("Searching Yandex Images"):
+    #     time.sleep(5)
     p = requests.get(img_url)
     index = img_url.rindex("/")
     save_name = img_url[index:]
@@ -16,67 +60,10 @@ def yandex():
     file_path = f"out_imgs\\{save_name}"
     search_url = 'https://yandex.ru/images/search'
     files = {'upfile': ('blob', open(file_path, 'rb'), 'image/jpeg')}
-    params = {'rpt': 'imageview', 'format': 'json', 'request': '{"blocks":[{"block":"b-page_type_search-by-image__link"}]}'}
+    params = {'rpt': 'imageview', 'format': 'json',
+              'request': '{"blocks":[{"block":"b-page_type_search-by-image__link"}]}'}
     response = requests.post(search_url, params=params, files=files)
-    st.write(response)
+    # st.write(response)
     query_string = json.loads(response.content)['blocks'][0]['params']['url']
     img_search_url = search_url + '?' + query_string
-    urllib.request.urlopen(img_search_url)
-    return img_search_url
-def ups():
-    y=yandex()
-    img_search_url=y.img_search_url
-    r = requests.post(
-        "https://api.deepai.org/api/torch-srgan",
-        data={
-            'image': img_search_url,
-        },
-        headers={'api-key': 'quickstart-QUdJIGlzIGNvbWluZy4uLi4K'}
-    )
-    print(r.json())
-
-
-st.title("Welcome to Disparse")
-st.subheader("A Web Crawler for Posters found on displate.com")
-link = st.text_input(label="Enter the Displate URL",)
-page = requests.get(link)
-
-if page.status_code != 200:
-    st.error('Connection error', icon="🚨")
-    quit()
-
-st.write("Getting page")
-
-soup = BeautifulSoup(page.text, "html.parser")
-
-scripts = soup.findAll("script", type="application/ld+json")
-
-script = scripts[1]
-# print(script)
-script_string = str(script)
-
-st.write("Extracting link to img")
-
-img_url_start_index = script_string.find("image") + 9
-# print(img_url_start_index)
-script_string = script_string[img_url_start_index:]
-
-img_url = script_string[:script_string.find('"')]
-
-st.write("IMG URL:")
-# st.write("img_url")
-st.image(img_url,use_column_width=.25)
-st.download_button(
-    label="Download this image",
-    data=img_url,
-    file_name=f"{img_url}.jpg"
-    )
-st.button(
-    label="Reverse search this Image",
-    on_click=yandex()
-    )
-st.button(
-    label="Upscale this image",
-    on_click=ups()
-)
-
+    st.write(img_search_url)

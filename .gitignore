@@ -1,2 +1,4 @@
 
 *.jpg
+out_imgs\*
+bhai.py
